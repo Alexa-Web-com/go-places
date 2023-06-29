@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/go-places/static/css/main.8a685450.css",
+    "main.js": "/go-places/static/js/main.71fc2328.js",
+    "index.html": "/go-places/index.html",
+    "main.8a685450.css.map": "/go-places/static/css/main.8a685450.css.map",
+    "main.71fc2328.js.map": "/go-places/static/js/main.71fc2328.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a685450.css",
+    "static/js/main.71fc2328.js"
+  ]
+}
