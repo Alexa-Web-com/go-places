@@ -46,24 +46,24 @@
 
 @media screen and (max-width: 1250px) {
   .page {
-    padding: 2rem 6rem;
+    padding: 2rem 6rem 4rem 6rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .page {
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 4rem 3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .page {
-    padding: 2rem 2rem;
+    padding: 2rem 2rem 4rem 2rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .page {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem 4rem 0.5rem;
   }
 }
