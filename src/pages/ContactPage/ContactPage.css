@@ -1,3 +1,67 @@
-.contact_page {
-    color: var(--aqua);
+a {
+    color: var(--blue);
+}
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactPage__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.contactPage__sent_msg_confirmation {
+    text-align: center;
+    color: var(--limon);
+    padding-top: 2rem;
+    margin: 7rem 0;
+
+}
+
+.contactPage__form_cntr {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.contactPage__form_el,
+.contactPage__form_button {
+    border-radius: 0.2rem;
+    outline: none;
+    border: 1px solid var(--blue);
+    padding: 0.2rem;
+    font-family: 'Ysabeau Infant';
+    font-size: 0.9rem;
+}
+
+.contactPage__form_el {
+    width: 20rem;
+    margin: 0.2rem 0;
+}
+
+.contactPage__form_el_error {
+    border: 1px solid red;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+}
+
+.contactPage__form_el_errMsg {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.contactPage__form_button {
+    width: 5rem;
+    margin: 0.4rem auto;
+    color: white;
+    font-weight: 600;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.contactPage__details_el_cntr {
+    text-align: center;
 }
