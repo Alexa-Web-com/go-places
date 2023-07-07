@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--limon, #a5e65a);
+    padding: 1rem;
+}
+
+.navbar__main {
+    display: flex
+}
+
+.navbar__short_logo {
+    display: none;
+}
+
+.navbar__short_settings {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar__main {
+        padding-bottom: 1rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .navbar__settings {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navbar__main {
+        padding-bottom: 0;
+    }
+
+}

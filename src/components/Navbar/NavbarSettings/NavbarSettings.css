@@ -1,0 +1,46 @@
+.navbarSettings {
+    display: flex;
+}
+
+.navbarSettings__el_cntr {
+    display: flex;
+}
+
+.navbarSettings__el {
+    padding-left: 1rem;
+    font-weight: 600;
+}
+
+.navbarSettings__lang_cntr,
+.navbarSettings__currency_cntr {
+    min-width: 5rem;
+}
+
+.navbarSettings__location_input {
+    padding-left: 0.4rem;
+}
+
+@media screen and (max-width: 950px) {
+    .navbarSettings {
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+    }
+
+    .navbarSettings__el {
+        padding-right: 1rem;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navbarSettings {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+    .navbarSettings__el {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        padding-top: 1rem;
+    }
+}
