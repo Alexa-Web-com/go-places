@@ -1,0 +1,36 @@
+.home_page__content_countries_cntr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 2rem;
+    justify-items: center;
+}
+
+.home_page__content_country_cntr {
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.home_page__content_country_name {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+}
+
+@media screen and (max-width: 1250px) {
+    .home_page__content_countries_cntr {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .home_page__content_countries_cntr {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home_page__content_countries_cntr {
+        grid-template-columns: 1fr;
+    }
+}

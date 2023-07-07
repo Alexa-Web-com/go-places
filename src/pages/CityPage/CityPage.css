@@ -1,0 +1,41 @@
+.city_page__content {
+    max-width: 60rem;
+    margin: auto;
+}
+
+.city_page__category_cntr {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+}
+
+.city_page__currency {
+    text-align: end;
+    padding-left: 0.5rem;
+    min-width: 6.5rem;
+}
+
+.city_page__empty {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .city_page__category_cntr {
+        grid-template-columns: 3fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .city_page__category_cntr {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .city_page__currency {
+        font-size: 0.9rem;
+    }
+
+    .city_page__category_cntr {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

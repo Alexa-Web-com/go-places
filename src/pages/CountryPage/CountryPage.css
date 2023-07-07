@@ -1,0 +1,33 @@
+.country_page__cities_cntr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 2rem;
+    justify-items: center;
+}
+
+.country_page__city {
+    color: var(--dark-grey);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+@media screen and (max-width: 1250px) {
+    .country_page__cities_cntr {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .country_page__cities_cntr {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .country_page__cities_cntr {
+        grid-template-columns: 1fr;
+    }
+}
