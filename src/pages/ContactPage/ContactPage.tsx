@@ -58,7 +58,7 @@ const ContactPage = (): JSX.Element => {
 
         setTimeout(() => {
             setSentMsg(false)
-        }, 5000)
+        }, 1000)
 
         setUserName('')
         setUserEmail('')
