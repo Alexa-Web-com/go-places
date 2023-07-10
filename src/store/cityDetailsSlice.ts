@@ -4,12 +4,12 @@ export interface IExchangeRate {
     [key: string]: number;
 }
 
-interface IExchangeRatesUpdated {
+export interface IExchangeRatesUpdated {
     date: string;
     timestamp: number
 }
 
-interface ICityPricesUsd {
+export interface ICityPricesUsd {
     min: string; avg: string; max: string;
 }
 
@@ -37,7 +37,7 @@ export interface ICityDetails {
     error: null;
 }
 
-interface ICityDetailsState {
+export interface ICityDetailsState {
     cityDetailsState: ICityDetails
 }
 

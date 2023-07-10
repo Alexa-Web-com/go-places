@@ -1,3 +1,36 @@
-.price_comparision_page {
-    color: var(--aqua);
+.priceComparisionPage__choose_location_cntr {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin: auto;
+    background-color: var(--aqua);
+    border-radius: 0.2rem;
+}
+
+.priceComparisionPage_location_cntr {
+    display: flex;
+    justify-content: center;
+}
+
+.priceComparisionPage_location_el {
+    width: 16.5rem;
+    margin: 1rem;
+    padding-left: 0;
+    margin-right: 3rem;
+    margin-left: 0;
+}
+
+.priceComparisionPage_location_compare_btn {
+    align-self: center;
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    outline: none;
+    border: 1px solid var(--blue);
+    padding: 0.2rem;
+    font-family: 'Ysabeau Infant';
+    font-size: 1rem;
+    width: 6rem;
+    color: white;
+    font-weight: 600;
+    background-color: var(--blue);
 }

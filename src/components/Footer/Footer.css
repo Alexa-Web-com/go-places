@@ -1,7 +1,7 @@
 .footer {
     color: greenyellow;
-    position: fixed;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
     background-color: var(--light-grey, #6a888c);
     color: var(--white, #ffffff);
     width: 100%;

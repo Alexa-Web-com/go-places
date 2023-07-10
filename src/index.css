@@ -13,6 +13,7 @@
   --limon: #a5e65a;
   --dark-grey: #5f7174;
   --light-grey: #6a888c;
+  --white-grey: #e1e3e3;
   --blue: #00a6c0;
   --aqua: #32d9cb;
   --white: #ffffff;
@@ -26,6 +27,7 @@
 
 .page {
   padding: 2rem 12rem;
+  min-height: 87.5vh;
 }
 
 .page__title {

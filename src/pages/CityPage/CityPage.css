@@ -6,6 +6,8 @@
 .city_page__category_cntr {
     display: grid;
     grid-template-columns: 4fr 1fr 1fr;
+    padding: 0.5rem;
+    margin: 0 1rem;
 }
 
 .city_page__currency {

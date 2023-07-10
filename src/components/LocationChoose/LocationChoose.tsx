@@ -7,7 +7,6 @@ import { RootState } from '../../store/store'
 import { useNavigate } from 'react-router-dom'
 import { translate } from '../../utils/dict'
 
-
 interface IChoosenCity extends ICityData {
     value: number;
     label: string;

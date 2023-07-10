@@ -37,6 +37,11 @@ a {
     font-size: 0.9rem;
 }
 
+input,
+textarea {
+    font-family: 'Ysabeau Infant';
+}
+
 .contactPage__form_el {
     width: 20rem;
     margin: 0.2rem 0;
@@ -46,6 +51,8 @@ a {
     border: 1px solid red;
     border-radius: 0.2rem;
     padding: 0.2rem;
+    width: 20rem;
+
 }
 
 .contactPage__form_el_errMsg {
@@ -54,12 +61,13 @@ a {
 }
 
 .contactPage__form_button {
-    width: 5rem;
+    width: 6rem;
     margin: 0.4rem auto;
     color: white;
     font-weight: 600;
     background-color: var(--blue);
     border: 1px solid var(--blue);
+    font-size: 1rem;
 }
 
 .contactPage__details_el_cntr {

@@ -1865,7 +1865,7 @@ const CityPage = (): JSX.Element => {
                                 <p>{`(${curr})`}</p>
                             </div>
                         </div>
-                        <div className='city_page__cities_cntr'>
+                        <div className='city_page__prices_cntr'>
                             {PricesCategoryNames.map((categoryName: string, index: number) =>
                                 <CategoryPricesDetails categoryName={categoryName} key={index} />
                             )}

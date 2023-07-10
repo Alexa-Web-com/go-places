@@ -123,9 +123,9 @@ const App = (): JSX.Element => {
   const getDataFromUrl = async (url: string, options: IUrlOptions): Promise<void> => {
     try {
       //TODO - zamienić data z Mock na data z res
-      const res = await fetch(url, options)
-      const data: ICitiesListFromUrl = await res.json()
-      // const data: ICitiesListFromUrl = apiResponseCitiesMock
+      // const res = await fetch(url, options)
+      // const data: ICitiesListFromUrl = await res.json()
+      const data: ICitiesListFromUrl = apiResponseCitiesMock
       dispatch(setCitiesList(data.cities))
     } catch (error) {
       console.log('error from getDataFromUrl - Cities List - function: ', error);
