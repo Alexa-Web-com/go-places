@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { translate } from '../../utils/dict';
-import { ICityData } from '../../store/citiesListSlice';
+import { ICityData } from '../../utils/types';
 
 const HomePage = (): JSX.Element => {
     const citiesList: ICityData[] = useSelector((state: RootState) => state.citiesList.citiesListState)

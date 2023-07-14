@@ -1,16 +1,17 @@
 import React from 'react'
 import './CategoryPricesDetails.css'
-import { ICityPrices, IExchangeRate } from '../../store/cityDetailsSlice'
+import { ICityPrices, IExchangeRate } from '../../utils/types'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { translate } from '../../utils/dict'
-
+import { setTwoDecimals } from '../../utils/setTwoDecimal'
 
 interface ICategoryPricesDetailsProps {
-    categoryName: string,
+    categoryName: string;
 }
 
 const CategoryPricesDetails = (props: ICategoryPricesDetailsProps) => {
+
     const cityExcancheRate: IExchangeRate = useSelector((state: RootState) => state.cityDetails.cityDetailsState.exchange_rate)
     const cityPrices: ICityPrices[] = useSelector((state: RootState) => state.cityDetails.cityDetailsState.prices)
     const lang: string = useSelector((state: RootState) => state.lang.langState)
@@ -27,35 +28,36 @@ const CategoryPricesDetails = (props: ICategoryPricesDetailsProps) => {
                     .map((elem: ICityPrices, index: number) =>
                         elem.measure === 'money'
                             ?
-                            <>
-                                <div className='categoryPricesDetails__elem_cntr' key={index}>
+                            <div key={index}>
+                                <div className='categoryPricesDetails__elem_cntr'>
                                     <p className='categoryPricesDetails__elem_name'>{translate(elem.item_name, lang)}</p>
                                     <div className='categoryPricesDetails__price_cntr'>
-                                        <p className='categoryPricesDetails__price_amount'>{elem.avg}</p>
+                                        <p className='categoryPricesDetails__price_amount'>{setTwoDecimals(elem.avg)}</p>
                                         <p className='categoryPricesDetails__price_curr'>{elem.currency_code}</p>
                                     </div>
                                     <div className='categoryPricesDetails__price_cntr'>
-                                        <p className='categoryPricesDetails__price_amount'>{(Number(elem.usd?.avg) * cityExcancheRate[curr]).toFixed(2)}</p>
+                                        {/* <p className='categoryPricesDetails__price_amount'>{(Number(elem.usd?.avg) * cityExcancheRate[curr]).toFixed(2)}</p> */}
+                                        <p className='categoryPricesDetails__price_amount'>{setTwoDecimals(+(Number(elem.usd?.avg) * cityExcancheRate[curr]))}</p>
                                         <p className='categoryPricesDetails__price_curr'>{curr}</p>
                                     </div>
                                 </div>
-                                <hr className='hr'></hr>
-                            </>
+                                <hr className='categoryPricesDetails_hr'></hr>
+                            </div>
                             :
-                            <>
-                                <div className='categoryPricesDetails__elem_cntr' key={index}>
+                            <div key={index}>
+                                <div className='categoryPricesDetails__elem_cntr'>
                                     <p className='categoryPricesDetails__elem_name'>{translate(elem.item_name, lang)}</p>
                                     <div className='categoryPricesDetails__price_cntr'>
-                                        <p className='categoryPricesDetails__price_amount'>{elem.avg}</p>
+                                        <p className='categoryPricesDetails__price_amount'>{setTwoDecimals(elem.avg)}</p>
                                         <p className='categoryPricesDetails__price_curr'>%</p>
                                     </div>
                                     <div className='categoryPricesDetails__price_cntr'>
-                                        <p className='categoryPricesDetails__price_amount'>{elem.avg}</p>
+                                        <p className='categoryPricesDetails__price_amount'>{setTwoDecimals(elem.avg)}</p>
                                         <p className='categoryPricesDetails__price_curr'>%</p>
                                     </div>
                                 </div>
-                                <hr className='hr'></hr>
-                            </>
+                                <hr className='categoryPricesDetails_hr'></hr>
+                            </div>
                     )}
             </div>
         </div>

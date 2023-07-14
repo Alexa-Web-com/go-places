@@ -2,7 +2,7 @@ import './CountryPage.css'
 import { useParams, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
-import { ICityData } from '../../store/citiesListSlice'
+import { ICityData } from '../../utils/types'
 import { translate } from '../../utils/dict'
 
 

@@ -4,18 +4,19 @@ import Navbar from './components/Navbar/Navbar';
 import CityPage from './pages/CityPage/CityPage';
 import CountryPage from './pages/CountryPage/CountryPage';
 import HomePage from './pages/HomePage/HomePage';
-import PriceComparisionPage from './pages/PriceComparisionPage/PriceComparisionPage';
+import PriceComparisonPage from './pages/PriceComparisonPage/PriceComparisonPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import Footer from './components/Footer/Footer';
 import { Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { ICityData, setCitiesList } from './store/citiesListSlice';
+import { setCitiesList } from './store/citiesListSlice';
+import { ICityData } from './utils/types';
 import { IUrlOptions, options } from './utils/options';
 import { urlCitiesList } from './utils/url';
 import Spinner from './components/Spinner/Spinner';
 
 
-export interface ICitiesListFromUrl {
+interface ICitiesListFromUrl {
   cities: ICityData[];
   error: null;
 }
@@ -123,9 +124,9 @@ const App = (): JSX.Element => {
   const getDataFromUrl = async (url: string, options: IUrlOptions): Promise<void> => {
     try {
       //TODO - zamienić data z Mock na data z res
-      // const res = await fetch(url, options)
-      // const data: ICitiesListFromUrl = await res.json()
-      const data: ICitiesListFromUrl = apiResponseCitiesMock
+      const res = await fetch(url, options)
+      const data: ICitiesListFromUrl = await res.json()
+      // const data: ICitiesListFromUrl = apiResponseCitiesMock
       dispatch(setCitiesList(data.cities))
     } catch (error) {
       console.log('error from getDataFromUrl - Cities List - function: ', error);
@@ -148,7 +149,7 @@ const App = (): JSX.Element => {
           <Route path='home' element={<HomePage />} />
           <Route path=':id' element={<CountryPage />} />
           <Route path='city/:id' element={<CityPage />} />
-          <Route path='price-comparision' element={<PriceComparisionPage />} />
+          <Route path='price-comparison' element={<PriceComparisonPage />} />
           <Route path='contact' element={<ContactPage />} />
           <Route path='*' element={<HomePage />} />
         </Routes>

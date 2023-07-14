@@ -1,0 +1,115 @@
+.comparison {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px 2px var(--white-grey);
+    display: flex;
+    flex-direction: column;
+}
+
+.comparison__category_name {
+    text-align: center;
+    color: var(--blue);
+}
+
+.comparison__cntr {
+    padding: 1rem 0 1rem 0;
+}
+
+.comparison__elem_cntr {
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr 1fr;
+    padding: 0rem 0.2rem;
+    border-radius: 0.2rem;
+    align-items: center;
+}
+
+.comparison__cityTwo_percent {
+    text-align: end;
+}
+
+.comparison_hr {
+    border: 1px solid var(--white-grey);
+    box-shadow: 0px 0px 5px 0px var(--white-grey);
+}
+
+.comparison__quantity_cntr {
+    display: flex;
+    margin-right: 0.2rem;
+}
+
+.comparison__quantity_input {
+    width: 1.6rem;
+    max-height: 1.5rem;
+    text-align: center;
+    outline: none;
+    border: 1px solid var(--blue);
+    border-radius: 0.2rem;
+}
+
+input,
+select,
+textarea {
+    color: var(--dark-grey)
+}
+
+.comparison__quantity_minus,
+.comparison__quantity_plus {
+    font-weight: 800;
+    padding: 0 0.4rem;
+    transition: transform;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.comparison__quantity_minus:hover {
+    color: red;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.comparison__quantity_plus:hover {
+    color: limegreen;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.comparison__elem_name {
+    margin-right: 1rem;
+
+}
+
+.comparison__city_price_cntr {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 6.5rem;
+    padding: 0 0.4rem;
+}
+
+.comparison__cityOne_price_curr {
+    padding-left: 0.2rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .comparison__elem_cntr {
+        grid-template-columns: 1fr 6fr 2fr 2fr 1fr;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .comparison__elem_cntr {
+        grid-template-columns: 1fr 4fr 2fr 2fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .comparison {
+        font-size: 0.9rem;
+    }
+
+    .comparison__elem_cntr {
+        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+        padding-bottom: 0.2rem;
+    }
+}

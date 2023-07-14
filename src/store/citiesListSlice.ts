@@ -1,15 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { ICityData } from '../utils/types';
 
-export interface ICityData {
-    city_id: number;
-    city_name: string;
-    country_name: string;
-    lat: number;
-    lng: number;
-    state_code: null | string;
-}
 
-export interface ICitiesList {
+interface ICitiesList {
     citiesListState: ICityData[];
     error: null;
 }
