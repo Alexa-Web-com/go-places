@@ -1,5 +1,6 @@
 .navbarSettings {
     display: flex;
+    margin-top: 1rem;
 }
 
 .navbarSettings__el_cntr {
@@ -20,27 +21,47 @@
     padding-left: 0.4rem;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
     .navbarSettings {
         justify-content: flex-start;
         flex-direction: row-reverse;
     }
 
-    .navbarSettings__el {
+    /* .navbarSettings__el { */
+    .navbarSettings__lang_cntr,
+    .navbarSettings__currency_cntr,
+    .navbar_settings__location_choose_cntr {
         padding-right: 1rem;
         padding-left: 0;
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 950px) {
+    .navbarSettings {
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    .navbar_settings__location_choose_cntr {
+        margin-top: 0rem;
+    }
+
     .navbarSettings {
         flex-direction: column-reverse;
         align-items: flex-end;
     }
+}
 
-    .navbarSettings__el {
+@media screen and (max-width: 650px) {
+
+    .navbarSettings__lang_cntr,
+    .navbarSettings__currency_cntr,
+    .navbar_settings__location_choose_cntr {
         padding-right: 0.5rem;
         padding-left: 0.5rem;
-        padding-top: 1rem;
     }
+
+
 }

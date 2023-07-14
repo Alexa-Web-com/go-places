@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom'
 import { translate } from '../../utils/dict'
 import { setCityOneDetails, setCityTwoDetails } from '../../store/citiesCompareSlice'
 import { options, IUrlOptions } from '../../utils/options'
-// TODO - mock do usuniecia 
-// import { apiResponseGdyniaMock } from '../../pages/CityPage/CityPage'
 import { Location, ICityDetails } from '../../utils/types'
 
 interface IChoosenCity extends ICityData {
@@ -54,7 +52,6 @@ const LocationChoice = (props: ILocationChoiceProps) => {
 
     const getDataFromUrl = async (url: string, options: IUrlOptions, locationChoose: number): Promise<void> => {
         try {
-            //TODO - zamienić data z Mock na data z res
             const res = await fetch(url, options)
             const data: ICityDetails = await res.json()
 
@@ -64,28 +61,23 @@ const LocationChoice = (props: ILocationChoiceProps) => {
                 itemValue: +(1 * Number(price.usd?.avg) * data.exchange_rate[curr]).toFixed(2)
             }))
 
-            // TODO - usunać obie linie:
-            // const data: ICityDetails = apiResponseAachenMock
-            // const data: ICityDetails = apiResponseGdyniaMock
-            if (locationChoose === Location.ONE) {
+            if (locationChoose === Location.CITY_ONE) {
                 dispatch(setCityOneDetails({ ...data, prices: pricesWithQty }))
             }
-            if (locationChoose === Location.TWO) {
+            if (locationChoose === Location.CITY_TWO) {
                 dispatch(setCityTwoDetails({ ...data, prices: pricesWithQty }))
             }
         } catch (error) {
-            console.log('error from getDataFromUrl - City Details - function: ', error);
+            console.log('Error: ', error);
         }
-        // setSpinner(false)
     }
 
     const chooseCityHandler = (elem: IChoosenCity) => {
-        // TODO - poprawic 'ify'
-        if (props.locationChoice === 1 || 2) {
+        if (props.locationChoice === Location.CITY_ONE || props.locationChoice === Location.CITY_TWO) {
             const url = `https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=${elem.city_name}&country_name=${elem.country_name}`
             getDataFromUrl(url, options, props.locationChoice)
         }
-        if (props.locationChoice === 0) {
+        if (props.locationChoice === Location.GENERAL) {
             const navigateLink: string = `${elem.city_id},%20${elem.city_name.replaceAll(' ', '%20')}`
             navigate(`/city/${navigateLink}`)
         }
@@ -112,6 +104,7 @@ const LocationChoice = (props: ILocationChoiceProps) => {
                             width: '17.5rem',
                             minHeight: '2.2rem',
                             height: '2.2rem',
+                            marginBottom: '1rem',
                         }),
                     }}
                     onChange={(elem) => {
@@ -150,6 +143,7 @@ const LocationChoice = (props: ILocationChoiceProps) => {
                             height: '2.2rem',
                         }),
                     }}
+
                     onChange={(elem) => {
                         elem
                             &&
