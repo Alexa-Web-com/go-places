@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.page_content {
+.page__content {
   margin: auto;
   padding-top: 2rem;
 }
@@ -27,7 +27,7 @@
 
 .page {
   padding: 2rem 12rem;
-  min-height: 87.5vh;
+  min-height: calc(100vh - 120px);
 }
 
 .page__title {
@@ -35,12 +35,9 @@
   text-align: center;
 }
 
-.page__content {
-  color: var(--dark-grey);
-}
 
 .page__content_title {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0;
   font-weight: 800;
   color: var(--dark-grey);
   text-align: center;

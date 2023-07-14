@@ -10,7 +10,6 @@ a {
 .contactPage__content {
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
 }
 
 .contactPage__sent_msg_confirmation {

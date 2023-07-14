@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { changeLang } from '../../../store/languageSlice'
 import { changeCurr } from '../../../store/currencySlice'
 import { RootState } from '../../../store/store'
-
-import LocationChoose from '../../LocationChoose/LocationChoose'
+import { Location } from '../../../utils/types'
+import LocationChoice from '../../LocationChoice/LocationChoice'
 
 const NavbarSettings = () => {
     const lang = useSelector((state: RootState) => state.lang.langState)
@@ -83,7 +83,7 @@ const NavbarSettings = () => {
                     />
                 </div>
             </div>
-            <LocationChoose />
+            <LocationChoice locationChoice={Location.GENERAL} />
         </div>
     )
 }

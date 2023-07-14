@@ -3,6 +3,7 @@ import languageReducer from './languageSlice'
 import currencyReducer from './currencySlice'
 import citiesListReducer from './citiesListSlice'
 import cityDetailsReducer from './cityDetailsSlice'
+import citiesCompareReducer from './citiesCompareSlice'
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         curr: currencyReducer,
         citiesList: citiesListReducer,
         cityDetails: cityDetailsReducer,
+        citiesCompare: citiesCompareReducer,
     },
 })
 

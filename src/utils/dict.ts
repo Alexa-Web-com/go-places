@@ -19,7 +19,7 @@ export const DICT: IDict = {
         'Back': 'Back',
 
         'Home': 'Home',
-        'Price Comparision': 'Price Comparision',
+        'Price Comparison': 'Price Comparison',
         'Contact': 'Contact',
         'Choose a location': 'Choose a location',
 
@@ -44,6 +44,7 @@ export const DICT: IDict = {
         'default currency': 'default currency',
 
         'Compare': 'Compare',
+        'Total costs:': 'Total costs:',
 
 
         'Your message has been sent!': 'Your message has been sent!',
@@ -116,7 +117,7 @@ export const DICT: IDict = {
         'Back': 'Wstecz',
 
         'Home': 'Główna',
-        'Price Comparision': 'Porównanie cen',
+        'Price Comparison': 'Porównanie cen',
         'Contact': 'Kontakt',
         'Choose a location': 'Wybierz lokalizację',
 
@@ -141,6 +142,7 @@ export const DICT: IDict = {
         'default currency': 'domyślna waluta',
 
         'Compare': 'Porównaj',
+        'Total costs:': 'Koszty ogółem:',
 
         'Your message has been sent!': 'Twoja wiadomość została wysłana!',
         'Contact form': 'Formularz kontaktowy',

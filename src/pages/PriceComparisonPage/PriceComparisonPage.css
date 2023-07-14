@@ -1,0 +1,101 @@
+.priceComparisonPage__content {
+    max-width: 60rem;
+    margin: auto;
+}
+
+
+.priceComparisonPage__choose_location_cntr {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin: auto;
+    /* background-color: var(--light-grey, #6a888c); */
+    background-color: var(--light-grey, #6a888c);
+
+    /* background-color: red; */
+    border-radius: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+.priceComparisonPage_location_cntr {
+    display: flex;
+    justify-content: center;
+}
+
+.priceComparisonPage_location_el {
+    width: 16.5rem;
+    margin: 1rem;
+    padding-left: 0;
+    margin-right: 3rem;
+    margin-left: 0;
+}
+
+.priceComparisonPage__cites_names_cntr {
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr 1fr;
+    padding: 0.5rem;
+    margin: 0 1rem;
+}
+
+.priceComparisonPage__city {
+    text-align: center;
+    padding-left: 1.2rem;
+    min-width: 6.5rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.priceComparisonPage__empty {
+    margin-right: 1rem;
+}
+
+.priceComparisonPage__totalCostValue {
+    display: flex;
+    font-weight: 600;
+    justify-content: right;
+    padding-right: 0.8rem;
+}
+
+
+.priceComparisonPage__subtitle {
+    text-align: end;
+    margin-right: 1rem;
+    padding-top: 1.3rem;
+
+}
+
+.priceComparisonPage__cityTwo_percent {
+    padding-top: 1.3rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .priceComparisonPage__choose_location_cntr {
+        width: 20rem;
+    }
+
+    .priceComparisonPage_location_cntr {
+        flex-direction: column;
+    }
+
+    .priceComparisonPage__cites_names_cntr {
+        grid-template-columns: 1fr 6fr 2fr 2fr 1fr;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .priceComparisonPage__cites_names_cntr {
+        grid-template-columns: 1fr 4fr 2fr 2fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .priceComparisonPage__cites_names_cntr {
+        font-size: 0.9rem;
+    }
+
+    .priceComparisonPage__cites_names_cntr {
+        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    }
+}

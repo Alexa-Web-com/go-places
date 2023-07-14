@@ -1,43 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { ICityDetails } from '../utils/types';
 
-export interface IExchangeRate {
-    [key: string]: number;
-}
 
-export interface IExchangeRatesUpdated {
-    date: string;
-    timestamp: number
-}
-
-export interface ICityPricesUsd {
-    min: string; avg: string; max: string;
-}
-
-export interface ICityPrices {
-    avg: number,
-    category_id: number,
-    category_name: string,
-    currency_code?: string,
-    good_id: number,
-    item_name: string,
-    max: number,
-    measure: string,
-    min: number,
-    usd?: ICityPricesUsd
-}
-
-export interface ICityDetails {
-    city_id: number;
-    city_name: string;
-    country_name: string;
-    exchange_rate: IExchangeRate;
-    exchange_rates_updated: IExchangeRatesUpdated;
-    prices: ICityPrices[];
-    state_code: null;
-    error: null;
-}
-
-export interface ICityDetailsState {
+interface ICityDetailsState {
     cityDetailsState: ICityDetails
 }
 
@@ -66,7 +31,9 @@ const initialState: ICityDetailsState = {
             min: 0,
             usd: {
                 min: '', avg: '', max: '',
-            }
+            },
+            qty: 1,
+            itemValue: 0,
         },],
         state_code: null,
     }

@@ -1,8 +1,6 @@
 .footer {
-    color: greenyellow;
-    /* position: absolute; */
-    /* bottom: 0; */
     background-color: var(--light-grey, #6a888c);
+    height: 48px;
     color: var(--white, #ffffff);
     width: 100%;
     text-align: center;
