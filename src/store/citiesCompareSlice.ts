@@ -99,13 +99,10 @@ export const citiesCompareSlice = createSlice({
         decreaceItemQty: (state, action: PayloadAction<{ good_id: number, curr: string }>) => {
             const indexItemCityOne = findIndexInCityPrices(0, state, action)
             const indexItemCityTwo = findIndexInCityPrices(1, state, action)
+
             state.citiesCompareState[0].prices[indexItemCityOne].qty -= 1
             state.citiesCompareState[0].prices[indexItemCityOne].itemValue = calculateItemValue(0, indexItemCityOne, indexItemCityOne, state, action)
             state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = calculateItemValue(1, indexItemCityTwo, indexItemCityOne, state, action)
-            //TODO - skonsultowac(czy do funkcji można przekazywać 2 takie same argumenty? indexItemCityOne) i usunac:
-            // state.citiesCompareState[0].prices[indexItemCityOne].itemValue = +(state.citiesCompareState[0].prices[indexItemCityOne].qty * Number(state.citiesCompareState[0].prices[indexItemCityOne].usd?.avg) * state.citiesCompareState[0].exchange_rate[action.payload.curr]).toFixed(2)
-
-            // state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = +(state.citiesCompareState[0].prices[indexItemCityOne].qty * Number(state.citiesCompareState[1].prices[indexItemCityTwo].usd?.avg) * state.citiesCompareState[1].exchange_rate[action.payload.curr]).toFixed(2)
         },
         increaceItemQty: (state, action: PayloadAction<{ good_id: number, curr: string }>) => {
             const indexItemCityOne = findIndexInCityPrices(0, state, action)
@@ -114,31 +111,22 @@ export const citiesCompareSlice = createSlice({
             state.citiesCompareState[0].prices[indexItemCityOne].qty += 1
             state.citiesCompareState[0].prices[indexItemCityOne].itemValue = calculateItemValue(0, indexItemCityOne, indexItemCityOne, state, action)
             state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = calculateItemValue(1, indexItemCityTwo, indexItemCityOne, state, action)
-
-            //TODO - skonsultowac(czy do funkcji można przekazywać 2 takie same argumenty? indexItemCityOne) i usunac:
-
-            // state.citiesCompareState[0].prices[indexItemCityOne].itemValue = +(state.citiesCompareState[0].prices[indexItemCityOne].qty * Number(state.citiesCompareState[0].prices[indexItemCityOne].usd?.avg) * state.citiesCompareState[0].exchange_rate[action.payload.curr]).toFixed(2)
-
-            // state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = +(state.citiesCompareState[0].prices[indexItemCityOne].qty * Number(state.citiesCompareState[1].prices[indexItemCityTwo].usd?.avg) * state.citiesCompareState[1].exchange_rate[action.payload.curr]).toFixed(2)
         },
         setItemsQty: (state, action: PayloadAction<{ good_id: number, qty: number, curr: string }>) => {
             const indexItemCityOne = findIndexInCityPrices(0, state, action)
             const indexItemCityTwo = findIndexInCityPrices(1, state, action)
 
             state.citiesCompareState[0].prices[indexItemCityOne].qty = action.payload.qty
-
-
             state.citiesCompareState[0].prices[indexItemCityOne].itemValue = calculateItemValueByNumber(0, indexItemCityOne, state, action)
             state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = calculateItemValueByNumber(1, indexItemCityTwo, state, action)
-
-            //TODO - usunac:
-            // state.citiesCompareState[0].prices[indexItemCityOne].itemValue = +(action.payload.qty * Number(state.citiesCompareState[0].prices[indexItemCityOne].usd?.avg) * state.citiesCompareState[0].exchange_rate[action.payload.curr]).toFixed(2)
-
-            // state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = +(action.payload.qty * Number(state.citiesCompareState[1].prices[indexItemCityTwo].usd?.avg) * state.citiesCompareState[1].exchange_rate[action.payload.curr]).toFixed(2)
+        },
+        setItemValueNewCurr: (state, action) => {
+            state.citiesCompareState[0].prices = action.payload.newStatePricesCityOne
+            state.citiesCompareState[1].prices = action.payload.newStatePricesCityTwo
         }
     },
 })
 
-export const { setCityOneDetails, setCityTwoDetails, decreaceItemQty, increaceItemQty, setItemsQty } = citiesCompareSlice.actions
+export const { setCityOneDetails, setCityTwoDetails, decreaceItemQty, increaceItemQty, setItemsQty, setItemValueNewCurr } = citiesCompareSlice.actions
 
 export default citiesCompareSlice.reducer

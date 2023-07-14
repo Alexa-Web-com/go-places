@@ -1,7 +1,7 @@
 export enum Location {
     GENERAL = 0,
-    ONE = 1,
-    TWO = 2,
+    CITY_ONE = 1,
+    CITY_TWO = 2,
 }
 
 export interface ICityData {

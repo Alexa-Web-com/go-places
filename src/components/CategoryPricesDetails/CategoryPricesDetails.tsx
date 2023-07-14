@@ -36,7 +36,6 @@ const CategoryPricesDetails = (props: ICategoryPricesDetailsProps) => {
                                         <p className='categoryPricesDetails__price_curr'>{elem.currency_code}</p>
                                     </div>
                                     <div className='categoryPricesDetails__price_cntr'>
-                                        {/* <p className='categoryPricesDetails__price_amount'>{(Number(elem.usd?.avg) * cityExcancheRate[curr]).toFixed(2)}</p> */}
                                         <p className='categoryPricesDetails__price_amount'>{setTwoDecimals(+(Number(elem.usd?.avg) * cityExcancheRate[curr]))}</p>
                                         <p className='categoryPricesDetails__price_curr'>{curr}</p>
                                     </div>

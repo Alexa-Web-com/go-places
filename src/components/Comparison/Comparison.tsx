@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import './Comparison.css'
-import { ICityDetails, ICityPrices, IExchangeRate, IInputNumberQty, IIncreaseDecreaseQty } from '../../utils/types'
+import { ICityDetails, ICityPrices, IInputNumberQty, IIncreaseDecreaseQty } from '../../utils/types'
 import { translate } from '../../utils/dict'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
-import { decreaceItemQty, increaceItemQty, setItemsQty } from '../../store/citiesCompareSlice'
+import { decreaceItemQty, increaceItemQty, setItemsQty, setItemValueNewCurr } from '../../store/citiesCompareSlice'
 import { setTwoDecimals } from '../../utils/setTwoDecimal'
 
 interface IComparisonProps {
@@ -21,6 +21,29 @@ const Comparison = (props: IComparisonProps) => {
     const cityOneGoodsId: number[] = citiesPrices[0].prices.map(item => item.good_id)
     const cityTwoGoodsId: number[] = citiesPrices[1].prices.map(item => item.good_id)
     const isItemInBothCities = (itemId: number): boolean => cityOneGoodsId.includes(itemId) && cityTwoGoodsId.includes(itemId)
+
+    useEffect(() => {
+
+        const newStateCityOne = citiesPrices[0].prices.map((price, index) => ({
+            ...price,
+            itemValue: citiesPrices[0].exchange_rate[curr] * Number(citiesPrices[0].prices[index].usd?.avg)
+        })
+        )
+
+        const newStateCityTwo = citiesPrices[1].prices.map((price, index) => ({
+            ...price,
+            itemValue: citiesPrices[1].exchange_rate[curr] * Number(citiesPrices[1].prices[index].usd?.avg)
+        })
+        )
+
+        const payload = {
+            newStatePricesCityOne: newStateCityOne,
+            newStatePricesCityTwo: newStateCityTwo,
+        }
+
+        dispatch(setItemValueNewCurr(payload))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [curr])
 
     const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>, good_id: number) => {
         const payload: IInputNumberQty = {

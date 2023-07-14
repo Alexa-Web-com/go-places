@@ -9,10 +9,7 @@
     flex-direction: column;
     width: 40rem;
     margin: auto;
-    /* background-color: var(--light-grey, #6a888c); */
     background-color: var(--light-grey, #6a888c);
-
-    /* background-color: red; */
     border-radius: 0.2rem;
     margin-bottom: 2rem;
 }
@@ -24,7 +21,8 @@
 
 .priceComparisonPage_location_el {
     width: 16.5rem;
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding-left: 0;
     margin-right: 3rem;
     margin-left: 0;
@@ -33,13 +31,20 @@
 .priceComparisonPage__cites_names_cntr {
     display: grid;
     grid-template-columns: 1fr 8fr 2fr 2fr 1fr;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 0 1rem;
+    align-items: end;
+}
+
+.priceComparisonPage__city_wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .priceComparisonPage__city {
     text-align: center;
     padding-left: 1.2rem;
+    padding-bottom: 1rem;
     min-width: 6.5rem;
     font-weight: 600;
     color: var(--blue);
@@ -61,12 +66,12 @@
     text-align: end;
     margin-right: 1rem;
     padding-top: 1.3rem;
-
 }
 
 .priceComparisonPage__cityTwo_percent {
     padding-top: 1.3rem;
-    text-align: left;
+    text-align: right;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 1000px) {
@@ -79,23 +84,83 @@
         flex-direction: column;
     }
 
+    .priceComparisonPage_location_el {
+        margin-left: 1.3rem;
+    }
+
     .priceComparisonPage__cites_names_cntr {
         grid-template-columns: 1fr 6fr 2fr 2fr 1fr;
     }
 }
 
 @media screen and (max-width: 750px) {
+
+    .priceComparisonPage_location_el {
+        margin-top: 1rem;
+    }
+
     .priceComparisonPage__cites_names_cntr {
         grid-template-columns: 1fr 4fr 2fr 2fr 1fr;
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .priceComparisonPage__city {
+        text-align: center;
+        padding-left: 0;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .priceComparisonPage_location_el {
+        margin-left: 0.8rem;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .priceComparisonPage__cites_names_cntr {
-        font-size: 0.9rem;
-    }
 
     .priceComparisonPage__cites_names_cntr {
-        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+        font-size: 0.9rem;
+        grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+    }
+
+    .priceComparisonPage__city {
+        text-align: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        min-width: 3rem;
+    }
+
+    .priceComparisonPage__subtitle {
+        white-space: nowrap;
+    }
+
+    .priceComparisonPage__totalCostValue {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .priceComparisonPage__cityTwo_percent {
+        white-space: break-spaces;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .priceComparisonPage__cites_names_cntr {
+        font-size: 0.9rem;
+        grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .priceComparisonPage__subtitle {
+        text-align: end;
+        margin-right: 1rem;
+        padding-top: 1.2rem;
     }
 }

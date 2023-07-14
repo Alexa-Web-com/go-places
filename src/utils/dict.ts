@@ -1,6 +1,6 @@
 export const languages: string[] = ['EN', 'PL',]
 
-export const currencies: string[] = ['USD', 'EUR', 'AUD', 'CAD', 'CHF', 'CNY', 'CZK', 'DKK', 'GBP', 'HKD', 'JPY', 'KRW', 'NOK', 'NZD', 'RUB', 'SEK', 'UAH']
+export const currencies: string[] = ['USD', 'EUR', 'AUD', 'CAD', 'CHF', 'CNY', 'CZK', 'DKK', 'GBP', 'HKD', 'JPY', 'NOK', 'NZD', 'RUB', 'SEK', 'UAH']
 
 interface ILang {
     [key: string]: string

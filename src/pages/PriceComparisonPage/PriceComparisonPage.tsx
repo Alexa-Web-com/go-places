@@ -84,10 +84,10 @@ const PriceComparisionPage = (): JSX.Element => {
                 <div className="priceComparisonPage__choose_location_cntr">
                     <div className='priceComparisonPage_location_cntr'>
                         <div className='priceComparisonPage_location_el'>
-                            <LocationChoice locationChoice={Location.ONE} />
+                            <LocationChoice locationChoice={Location.CITY_ONE} />
                         </div>
                         <div className='priceComparisonPage_location_el'>
-                            <LocationChoice locationChoice={Location.TWO} />
+                            <LocationChoice locationChoice={Location.CITY_TWO} />
                         </div>
                     </div>
 
@@ -97,7 +97,7 @@ const PriceComparisionPage = (): JSX.Element => {
                     <div className='priceComparisonPage__cites_names_cntr'>
                         <p className='priceComparisonPage__empty'></p>
                         <p className='priceComparisonPage__subtitle'>{translate('Total costs:', lang)}</p>
-                        <div>
+                        <div className='priceComparisonPage__city_wrapper'>
                             <p className='priceComparisonPage__city'>{cityOneName}</p>
                             <div className='priceComparisonPage__totalCostValue'>
                                 <p>

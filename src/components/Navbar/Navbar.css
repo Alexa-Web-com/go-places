@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--limon, #a5e65a);
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
 }
 
 .navbar__main {
@@ -21,6 +21,7 @@
 @media screen and (max-width: 950px) {
     .navbar {
         flex-direction: column;
+        padding: 1rem 1rem 0 1rem;
     }
 
     .navbar__main {
@@ -34,9 +35,14 @@
     }
 }
 
-@media screen and (max-width: 650px) {
-    .navbar__main {
-        padding-bottom: 0;
+@media screen and (max-width: 750px) {
+    .navbar {
+        padding: 1rem 1rem 1rem 1rem;
     }
+}
 
+@media screen and (max-width: 400px) {
+    .navbar {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+    }
 }
