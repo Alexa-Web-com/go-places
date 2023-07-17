@@ -38,6 +38,20 @@
     }
 
     .city_page__category_cntr {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        padding: 0.5rem 0.5rem 0 0.5rem;
+
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .city_page__category_cntr {
+        margin: 0;
+    }
+
+    .city_page__currency {
+        text-align: center;
+        padding-left: 0.5rem;
+        min-width: 3rem;
     }
 }

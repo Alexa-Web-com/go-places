@@ -36,6 +36,12 @@
 .comparison__quantity_cntr {
     display: flex;
     margin-right: 0.2rem;
+    padding: 0 1.2rem;
+    position: relative;
+}
+
+.comparison__quantity_cntr_for_percent {
+    width: 4rem;
 }
 
 .comparison__quantity_input {
@@ -55,11 +61,21 @@ textarea {
 
 .comparison__quantity_minus,
 .comparison__quantity_plus {
+    position: absolute;
+    top: -0.3rem;
     font-weight: 800;
     padding: 0 0.4rem;
     transition: transform;
     text-align: center;
     font-size: 1.1rem;
+}
+
+.comparison__quantity_minus {
+    left: 0.4rem;
+}
+
+.comparison__quantity_plus {
+    right: 0.2rem;
 }
 
 .comparison__quantity_minus:hover {
@@ -75,7 +91,7 @@ textarea {
 }
 
 .comparison__elem_name {
-    margin-right: 1rem;
+    margin-right: 0.8rem;
 }
 
 .comparison__city_price_cntr {

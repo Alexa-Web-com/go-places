@@ -21,6 +21,7 @@
     grid-template-columns: 4fr 1fr 1fr;
     padding: 0rem 0.4rem;
     border-radius: 0.2rem;
+    align-items: center;
 }
 
 .categoryPricesDetails_hr {
@@ -61,7 +62,25 @@
     }
 
     .categoryPricesDetails__elem_cntr {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
         padding-bottom: 0.2rem;
+    }
+
+    .categoryPricesDetails__elem_name {
+        margin-right: 0.2rem;
+    }
+
+    .categoryPricesDetails__price_cntr {
+        min-width: 3rem;
+        padding: 0 0.2rem;
+    }
+}
+
+
+@media screen and (max-width: 415px) {
+    .categoryPricesDetails {
+        min-width: 310px;
+        font-size: 0.8rem;
+        margin: 1rem 0;
     }
 }

@@ -123,6 +123,7 @@
     .priceComparisonPage__cites_names_cntr {
         font-size: 0.9rem;
         grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+        padding: 0 1rem;
     }
 
     .priceComparisonPage__city {

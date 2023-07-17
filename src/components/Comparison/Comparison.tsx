@@ -120,7 +120,7 @@ const Comparison = (props: IComparisonProps) => {
                             :
                             <div key={index}>
                                 <div className='comparison__elem_cntr'>
-                                    <div className='comparison__quantity_cntr'></div>
+                                    <div className='comparison__quantity_cntr comparison__quantity_cntr_for_percent'></div>
                                     <div className='comparison__elem_name'>{translate(elem.item_name, lang)}</div>
                                     <div className='comparison__city_price_cntr'>
                                         <p className='comparison__cityOne_price_amount'>{elem.avg}</p>

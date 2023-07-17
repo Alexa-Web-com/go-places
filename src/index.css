@@ -59,10 +59,29 @@
   .page {
     padding: 2rem 2rem 4rem 2rem;
   }
+
+  .page__title {
+    font-size: 1.7rem;
+  }
+
+  .page__content_title {
+    font-size: 1.3rem;
+    padding: 0 0 1rem 0;
+  }
+
+  .page__content {
+    padding-top: 1rem;
+  }
+
+  .back {
+    font-size: 0.9rem;
+  }
 }
+
 
 @media screen and (max-width: 480px) {
   .page {
     padding: 0.5rem 0.5rem 4rem 0.5rem;
   }
+
 }
