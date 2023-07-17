@@ -43,7 +43,8 @@
 
 .priceComparisonPage__city {
     text-align: center;
-    padding-left: 1.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
     padding-bottom: 1rem;
     min-width: 6.5rem;
     font-weight: 600;
@@ -58,7 +59,7 @@
     display: flex;
     font-weight: 600;
     justify-content: right;
-    padding-right: 0.8rem;
+    padding-right: 0.4rem;
 }
 
 
@@ -127,9 +128,6 @@
     }
 
     .priceComparisonPage__city {
-        text-align: center;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
         min-width: 3rem;
     }
 
