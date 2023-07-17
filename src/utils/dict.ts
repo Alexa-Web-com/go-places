@@ -121,6 +121,7 @@ export const DICT: IDict = {
         'Contact': 'Kontakt',
         'Choose a location': 'Wybierz lokalizację',
 
+
         'Cost of living and prices for cities around the world, prices of food, rent, shopping etc.': 'Koszty życia i ceny w miastach na całym świecie, ceny żywności, wynajmu, zakupów itp.',
         'Countires': 'Kraje',
 

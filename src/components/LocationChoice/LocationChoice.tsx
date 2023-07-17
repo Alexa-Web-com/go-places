@@ -16,7 +16,9 @@ interface IChoosenCity extends ICityData {
 }
 
 interface ILocationChoiceProps {
-    locationChoice: number
+    locationChoice: Location;
+    setIsSpinner?: React.Dispatch<React.SetStateAction<boolean>>;
+    isSpinner?: boolean;
 }
 
 const LocationChoice = (props: ILocationChoiceProps) => {
@@ -51,6 +53,10 @@ const LocationChoice = (props: ILocationChoiceProps) => {
     const dispatch = useDispatch()
 
     const getDataFromUrl = async (url: string, options: IUrlOptions, locationChoose: number): Promise<void> => {
+        if (props.setIsSpinner !== undefined) {
+            props.setIsSpinner(true)
+        }
+
         try {
             const res = await fetch(url, options)
             const data: ICityDetails = await res.json()
@@ -67,8 +73,13 @@ const LocationChoice = (props: ILocationChoiceProps) => {
             if (locationChoose === Location.CITY_TWO) {
                 dispatch(setCityTwoDetails({ ...data, prices: pricesWithQty }))
             }
+
         } catch (error) {
             console.log('Error: ', error);
+        } finally {
+            if (props.setIsSpinner !== undefined) {
+                props.setIsSpinner(false)
+            }
         }
     }
 

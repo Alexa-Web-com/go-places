@@ -13,7 +13,7 @@ import { ICityData } from '../../utils/types'
 import Spinner from '../../components/Spinner/Spinner'
 
 const CityPage = (): JSX.Element => {
-    const [spinner, setSpinner] = useState<boolean>(true)
+    const [isSpinner, setIsSpinner] = useState<boolean>(true)
 
     const lang: string = useSelector((state: RootState) => state.lang.langState)
     const curr: string = useSelector((state: RootState) => state.curr.currState)
@@ -47,8 +47,9 @@ const CityPage = (): JSX.Element => {
             dispatch(setCityDetails({ ...data, prices: pricesWithQty }))
         } catch (error) {
             console.log('error from getDataFromUrl - City Details - function: ', error);
+        } finally {
+            setIsSpinner(false)
         }
-        setSpinner(false)
     }
 
     useEffect(() => {
@@ -59,7 +60,7 @@ const CityPage = (): JSX.Element => {
 
     return (
         <>
-            {spinner ?
+            {isSpinner ?
                 <Spinner />
                 :
                 <div className='city_page page'>
