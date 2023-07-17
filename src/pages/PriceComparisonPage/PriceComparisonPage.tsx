@@ -1,5 +1,5 @@
 import './PriceComparisonPage.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import LocationChoice from '../../components/LocationChoice/LocationChoice'
 import { translate } from '../../utils/dict'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,8 +8,11 @@ import { ICityDetails, ICityPrices, Location } from '../../utils/types'
 import Comparison from '../../components/Comparison/Comparison'
 import { NavLink } from 'react-router-dom'
 import { setCityOneDetails, setCityTwoDetails } from '../../store/citiesCompareSlice'
+import Spinner from '../../components/Spinner/Spinner'
 
 const PriceComparisionPage = (): JSX.Element => {
+    const [isSpinner, setIsSpinner] = useState<boolean>(false)
+
     const lang: string = useSelector((state: RootState) => state.lang.langState)
     const curr: string = useSelector((state: RootState) => state.curr.currState)
 
@@ -84,14 +87,15 @@ const PriceComparisionPage = (): JSX.Element => {
                 <div className="priceComparisonPage__choose_location_cntr">
                     <div className='priceComparisonPage_location_cntr'>
                         <div className='priceComparisonPage_location_el'>
-                            <LocationChoice locationChoice={Location.CITY_ONE} />
+                            <LocationChoice locationChoice={Location.CITY_ONE} setIsSpinner={setIsSpinner} isSpinner={isSpinner} />
                         </div>
                         <div className='priceComparisonPage_location_el'>
-                            <LocationChoice locationChoice={Location.CITY_TWO} />
+                            <LocationChoice locationChoice={Location.CITY_TWO} setIsSpinner={setIsSpinner} isSpinner={isSpinner} />
                         </div>
                     </div>
 
                 </div>
+                {isSpinner && <Spinner />}
                 {cityOneName && cityTwoName
                     &&
                     <div className='priceComparisonPage__cites_names_cntr'>
@@ -121,7 +125,8 @@ const PriceComparisionPage = (): JSX.Element => {
                                 {`${+(calculateTotalValueCityTwo() * 100 / calculateTotalValueCityOne()).toFixed(2)} %`}
                             </p>
                         </div>
-                    </div>}
+                    </div>
+                }
                 {
                     cityOneName && cityTwoName
                     &&

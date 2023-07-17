@@ -33,8 +33,9 @@ const App = (): JSX.Element => {
       dispatch(setCitiesList(data.cities))
     } catch (error) {
       console.log('Error: ', error);
+    } finally {
+      setSpinner(false)
     }
-    setSpinner(false)
   }
 
   useEffect(() => {
