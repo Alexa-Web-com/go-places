@@ -35,8 +35,9 @@
 
 .comparison__quantity_cntr {
     display: flex;
-    margin-right: 0.2rem;
-    padding: 0 1.2rem;
+    justify-content: space-between;
+    margin-right: 0.4rem;
+    padding: 0 0.8rem;
     position: relative;
 }
 
@@ -68,14 +69,16 @@ textarea {
     transition: transform;
     text-align: center;
     font-size: 1.1rem;
+    padding: 0 0.2rem;
+
 }
 
 .comparison__quantity_minus {
-    left: 0.4rem;
+    left: 0rem;
 }
 
 .comparison__quantity_plus {
-    right: 0.2rem;
+    left: 2.3rem;
 }
 
 .comparison__quantity_minus:hover {
@@ -120,11 +123,6 @@ textarea {
     .comparison__elem_cntr {
         grid-template-columns: 1fr 4fr 2fr 2fr 1fr;
     }
-
-    .comparison__quantity_minus,
-    .comparison__quantity_plus {
-        padding: 0 0.2rem;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -135,7 +133,9 @@ textarea {
     .comparison__elem_cntr {
         grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
         padding-bottom: 0.2rem;
+        padding-left: 0;
     }
+
 
     .comparison__elem_name {
         margin-right: 0.2rem;
