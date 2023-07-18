@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/go-places/static/css/main.23183d3e.css",
+    "main.css": "/go-places/static/css/main.bc07ab36.css",
     "main.js": "/go-places/static/js/main.ca72947e.js",
     "static/media/logoAlexaWebTransparent25.png": "/go-places/static/media/logoAlexaWebTransparent25.020754335c9d5cc87022.png",
     "index.html": "/go-places/index.html",
-    "main.23183d3e.css.map": "/go-places/static/css/main.23183d3e.css.map",
+    "main.bc07ab36.css.map": "/go-places/static/css/main.bc07ab36.css.map",
     "main.ca72947e.js.map": "/go-places/static/js/main.ca72947e.js.map"
   },
   "entrypoints": [
-    "static/css/main.23183d3e.css",
+    "static/css/main.bc07ab36.css",
     "static/js/main.ca72947e.js"
   ]
 }
