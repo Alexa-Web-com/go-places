@@ -48,7 +48,7 @@ const Comparison = (props: IComparisonProps) => {
     const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>, good_id: number) => {
         const payload: IInputNumberQty = {
             good_id: good_id,
-            qty: Number(e.target.value),
+            qty: (typeof e.target.value === 'number' && e.target.value >= 0) ? Number(e.target.value) : 0,
             curr: curr,
         }
         dispatch(setItemsQty(payload))
@@ -94,7 +94,10 @@ const Comparison = (props: IComparisonProps) => {
                                         <input
                                             value={elem.qty}
                                             onChange={(e) => inputChangeHandler(e, elem.good_id)}
-                                            className='comparison__quantity_input' />
+                                            className='comparison__quantity_input'
+                                            type='text'
+                                            inputMode='numeric'
+                                        />
                                         <p className='comparison__quantity_plus'
                                             onClick={(e) => increaseItemQtyHandler(elem.good_id)}
                                         >+</p>
@@ -109,10 +112,15 @@ const Comparison = (props: IComparisonProps) => {
                                         <p className='comparison__cityOne_price_curr'>{curr}</p>
                                     </div>
 
-                                    <div className='comparison__cityTwo_percent'
-                                        style={{ color: `${(+(findItemValue(elem) * 100 / elem.itemValue)) > 100 ? 'red' : 'limegreen'}` }}>
-                                        {`${setTwoDecimals(+(findItemValue(elem) * 100 / elem.itemValue))} %`}
-                                    </div>
+                                    {elem.qty === 0
+                                        ?
+                                        <div className='comparison__cityTwo_percent'>0 %</div>
+                                        :
+                                        <div className='comparison__cityTwo_percent'
+                                            style={{ color: `${(+(findItemValue(elem) * 100 / elem.itemValue)) > 100 ? 'red' : 'limegreen'}` }}>
+                                            {`${setTwoDecimals(+(findItemValue(elem) * 100 / elem.itemValue))} %`}
+                                        </div>
+                                    }
 
                                 </div>
                                 <hr className='comparison_hr'></hr>

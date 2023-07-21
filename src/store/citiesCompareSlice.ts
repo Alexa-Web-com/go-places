@@ -100,7 +100,7 @@ export const citiesCompareSlice = createSlice({
             const indexItemCityOne = findIndexInCityPrices(0, state, action)
             const indexItemCityTwo = findIndexInCityPrices(1, state, action)
 
-            state.citiesCompareState[0].prices[indexItemCityOne].qty -= 1
+            state.citiesCompareState[0].prices[indexItemCityOne].qty -= state.citiesCompareState[0].prices[indexItemCityOne].qty >= 1 ? 1 : 0
             state.citiesCompareState[0].prices[indexItemCityOne].itemValue = calculateItemValue(0, indexItemCityOne, indexItemCityOne, state, action)
             state.citiesCompareState[1].prices[indexItemCityTwo].itemValue = calculateItemValue(1, indexItemCityTwo, indexItemCityOne, state, action)
         },

@@ -26,6 +26,7 @@
 
 .comparison__cityTwo_percent {
     text-align: end;
+    white-space: nowrap;
 }
 
 .comparison_hr {
@@ -107,10 +108,6 @@ textarea {
 
 .comparison__cityOne_price_curr {
     padding-left: 0.2rem;
-}
-
-.comparison__cityTwo_percent {
-    white-space: nowrap;
 }
 
 @media screen and (max-width: 1000px) {
