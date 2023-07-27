@@ -4,7 +4,7 @@ import { languages } from '../utils/dict'
 interface ILangState {
     langState: string
 }
-const langFromNavivgator: string = (navigator.language.split('')[0] + navigator.language.split('')[1]).toUpperCase()
+const langFromNavivgator: string = (navigator.language.substring(0, 2)).toUpperCase()
 
 const initialState: ILangState = {
     langState: languages.find((lang) => lang === langFromNavivgator) ? langFromNavivgator : 'EN'
