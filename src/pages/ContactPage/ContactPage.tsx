@@ -96,6 +96,7 @@ const ContactPage = (): JSX.Element => {
                     <div className='contactPage__content page__content'>
                         <h2 className='page__content_title'>{translate('Contact form', lang)}</h2>
                         <form className='contactPage__form_cntr'
+                            name='contact'
                             onSubmit={e => submitBtnHandler(e)}>
                             <input className={isUserNameValid ? 'contactPage__form_el' : 'contactPage__form_el_error'}
                                 type='text'

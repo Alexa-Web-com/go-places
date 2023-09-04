@@ -105,7 +105,7 @@ const PriceComparisionPage = (): JSX.Element => {
                             <p className='priceComparisonPage__city'>{cityOneName}</p>
                             <div className='priceComparisonPage__totalCostValue'>
                                 <p>
-                                    {+calculateTotalValueCityOne().toFixed(2)}
+                                    {+calculateTotalValueCityOne().toFixed(0)}
                                 </p>
                                 <p className='comparison__cityOne_price_curr'>{curr}</p>
                             </div>
@@ -114,7 +114,7 @@ const PriceComparisionPage = (): JSX.Element => {
                             <p className='priceComparisonPage__city'>{cityTwoName}</p>
                             <div className='priceComparisonPage__totalCostValue'>
                                 <p>
-                                    {+calculateTotalValueCityTwo().toFixed(2)}
+                                    {+calculateTotalValueCityTwo().toFixed(0)}
                                 </p>
                                 <p className='comparison__cityOne_price_curr'>{curr}</p>
 
@@ -122,7 +122,7 @@ const PriceComparisionPage = (): JSX.Element => {
                         </div>
                         <div>
                             <p className='priceComparisonPage__cityTwo_percent' style={{ color: `${+(calculateTotalValueCityTwo() * 100 / calculateTotalValueCityOne()).toFixed(2) > 100 ? 'red' : 'limegreen'}` }}>
-                                {`${+(calculateTotalValueCityTwo() * 100 / calculateTotalValueCityOne()).toFixed(2)} %`}
+                                {`${+(calculateTotalValueCityTwo() * 100 / calculateTotalValueCityOne()).toFixed(0)} %`}
                             </p>
                         </div>
                     </div>
