@@ -5,7 +5,7 @@ import { translate } from '../../utils/dict'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import { decreaceItemQty, increaceItemQty, setItemsQty, setItemValueNewCurr } from '../../store/citiesCompareSlice'
-import { setTwoDecimals } from '../../utils/setTwoDecimal'
+import { setTwoDecimals, setZeroDecimals } from '../../utils/setTwoDecimal'
 
 interface IComparisonProps {
     categoryName: string;
@@ -118,7 +118,7 @@ const Comparison = (props: IComparisonProps) => {
                                         :
                                         <div className='comparison__cityTwo_percent'
                                             style={{ color: `${(+(findItemValue(elem) * 100 / elem.itemValue)) > 100 ? 'red' : 'limegreen'}` }}>
-                                            {`${setTwoDecimals(+(findItemValue(elem) * 100 / elem.itemValue))} %`}
+                                            {`${setZeroDecimals(+(findItemValue(elem) * 100 / elem.itemValue))} %`}
                                         </div>
                                     }
 
